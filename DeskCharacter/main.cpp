@@ -43,6 +43,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	//ŒŽ‚ÌŽæ“¾
 	SYSTEMTIME st;
 	GetLocalTime(&st);
+	//graph yuyu = LoadGraph("../pictures/string1.png");
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 
