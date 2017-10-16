@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include "LoadCfg.h"
+#include "graphicload.h"
 using namespace DxLib;
 
 static WNDPROC pPrevWndProc;
@@ -16,8 +18,6 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	//型の定義
 	using define = const int;
-	using graph = int;
-
 	//宣言部
 	
 
@@ -32,10 +32,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	SetWindowStyleMode(2);	// ウィンドウの枠無し
 	SetUseBackBufferTransColorFlag(TRUE);	// ウィンドウを透明
 
-	//画像読み込み
-	graph character = LoadGraph("../pictures/yuyuko.png");
-	graph massagewindow1 = LoadGraph("../pictures/message_window1.png");
-	graph string_1 = LoadGraph("../pictures/string1.png");
 
 	//透過色の設定
 	SetTransColor(1, 0, 0);
@@ -50,10 +46,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0) {
 
-		DrawGraph(0, 0, massagewindow1, TRUE);
-		DrawGraph(0, 0, string_1, TRUE);
+		DrawGraph(MessageWindowX, MessageWindowY, MesseWindow, TRUE);
+		DrawGraph(MessageX, MessageY, str1, TRUE);
 
-		DrawGraph(280, 0, character,TRUE);
+		DrawGraph(CharaX, CharaY, CharacterGraph,TRUE);
 	}
 	DxLib_End();
 	return 0;
