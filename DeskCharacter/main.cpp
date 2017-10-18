@@ -15,6 +15,7 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 	return CallWindowProc(pPrevWndProc, hWnd, uMsg, wParam, lParam);
 }
 
+
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	//Œ^‚Ì’è‹`
 	using define = const int;

@@ -1,6 +1,8 @@
 #pragma once
 #include "DxLib.h"
 
+//using graph = int;
+
 extern graph str1;
 extern graph str2;
 extern graph str3;
